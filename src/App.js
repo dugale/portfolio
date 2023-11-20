@@ -1,6 +1,6 @@
 //import logo from './logo.svg';
 import './App.css';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Link } from 'react-router-dom';
 
 function Header() {
   return (
@@ -16,11 +16,17 @@ function Nav() {
   return (
     <nav>
       <ul>
-        <li>About</li>
-        <li>Work</li>
-        <li>Portfolio</li>
-        <li>Contact</li>
+        <link to="/">About</link>
+        <link to="/work">Work</link>
+        <link to="/portfolio">Portfolio</link>
+        <link to="/contact">Contact</link>
       </ul>
+      <Routes>
+        <Route path="/" element={<About />} />
+        <Route path="/work" element={<Work />} />
+        <Route path="/portfolio" element={<Portfolio />} />
+        <Route path="/contact" elment={<Contact />} />
+      </Routes>
     </nav>
   );
 }

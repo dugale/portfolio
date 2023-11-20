@@ -1,7 +1,7 @@
-function HomePage() {
+function About() {
     return (
-        <h1>Home Page</h1>
+        <h1>Aboute</h1>
     );
 }
 
-export default HomePage
+export default About
