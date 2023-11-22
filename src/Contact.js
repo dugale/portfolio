@@ -1,14 +1,37 @@
 import { useState } from "react";
+
 function Contact() {
     const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
+    const [email, setEmail] = useState({
+        value: "",
+        isTouched: false
+    });
     const [phone, setPhone] = useState("");
     const [message, setMessage] = useState("");
+
+    const EmailErrorMessage = () => {
+        return (
+            <p>Please enter a valid email address</p>
+        )
+    }
+
+    const validateEmail = (emailAddress) => {
+        return /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(emailAddress);
+    }
+
+    const getIsFormValid = () => {
+        return (
+            name &&
+            validateEmail(email) &&
+            message
+        );
+    }
 
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log('form submitted');
     }
+
     return (
         <>
             <h1>Contact</h1>
@@ -35,9 +58,17 @@ function Contact() {
                             type="email"
                             placeholder="Email"
                             name="email"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)} 
+                            value={email.value}
+                            onChange={(e) => {
+                                setEmail({...email, value: e.target.value});
+                            }}
+                            onBlur={() => {
+                                setEmail({...email, isTouched: true})
+                            }}
                         />
+                        {email.isTouched && !validateEmail(email.value) ? (
+                            <EmailErrorMessage />
+                        ) : null}
                     </div>
                     <div>
                         <label>Phone (optional):</label>
@@ -60,7 +91,7 @@ function Contact() {
                             onChange={(e) => setMessage(e.target.value)}
                         />
                     </div>
-                    <button type="submit">Submit</button>
+                    <button type="submit" disabled={!getIsFormValid()}>Submit</button>
                 </fieldset>
             </form>
         </>
