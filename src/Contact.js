@@ -6,7 +6,10 @@ function Contact() {
         value: "",
         isTouched: false
     });
-    const [phone, setPhone] = useState("");
+    const [phone, setPhone] = useState({
+        value: "",
+        isTouched: false
+    });
     const [message, setMessage] = useState("");
 
     const EmailErrorMessage = () => {
@@ -15,14 +18,28 @@ function Contact() {
         )
     }
 
+    const PhoneErrorMessage = () => {
+        return (
+            <p>Please enter a valid phone number</p>
+        )
+    }
+
     const validateEmail = (emailAddress) => {
         return /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(emailAddress);
+    }
+
+    const validatePhone = (phoneNumber) => {
+        if (!phoneNumber) {
+            return true;
+        }
+        return /^[0-9()+-\s]+$/i.test(phoneNumber);
     }
 
     const getIsFormValid = () => {
         return (
             name &&
-            validateEmail(email) &&
+            validateEmail(email.value) &&
+            validatePhone(phone.value) &&
             message
         );
     }
@@ -77,9 +94,17 @@ function Contact() {
                             type="tel"
                             placeholder="Phone"
                             name="phone"
-                            value={phone}
-                            onChange={(e) => setPhone(e.target.value)}
+                            value={phone.value}
+                            onChange={(e) => {
+                                setPhone({...phone, value: e.target.value})
+                            }}
+                            onBlur={() => {
+                                setPhone({...phone, isTouched: true})
+                            }}
                         />
+                        {phone.isTouched && !validatePhone(phone.value) ? (
+                            <PhoneErrorMessage />
+                        ) : null}
                     </div>
                     <div>
                         <label>Message:</label>

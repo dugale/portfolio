@@ -5,6 +5,8 @@ import Contact from "./Contact"
 import Portfolio from "./Portfolio"
 import Work from "./Work"
 import { Routes, Route, Link } from 'react-router-dom';
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min";
 
 function Header() {
   return (
@@ -25,12 +27,6 @@ function Nav() {
         <Link to="/portfolio">Portfolio</Link>
         <Link to="/contact">Contact</Link>
       </ul>
-      <Routes>
-        <Route path="/" element={<About />} />
-        <Route path="/work" element={<Work />} />
-        <Route path="/portfolio" element={<Portfolio />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
     </nav>
   );
 }
@@ -38,7 +34,12 @@ function Nav() {
 function Main() {
   return (
     <main>
-      
+      <Routes>
+        <Route path="/" element={<About />} />
+        <Route path="/work" element={<Work />} />
+        <Route path="/portfolio" element={<Portfolio />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
     </main>
   );
 }
@@ -53,12 +54,18 @@ function Footer() {
 
 function App() {
   return (
-    <>
-      <Header />
-      <Nav />
-      <Main />
-      <Footer />
-    </>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <Header />
+          <Nav />
+        </div>
+        <div class="col">
+          <Main />
+          <Footer />
+        </div>
+      </div>
+    </div>
   );
 }
 
