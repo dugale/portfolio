@@ -13,7 +13,22 @@ function Header() {
     <header>
       <h1>David Ugale</h1>
       <h2>Full Stack Developer</h2>
-      <p>Website Development</p>
+      <dl>
+        <dt>Front-End</dt>
+        <dd>JavaScript, TypeScript, React, HTML, CSS, SCSS/SASS</dd>
+        <dt>Back-End</dt>
+        <dd>Python, PHP</dd>
+        <dt>Frameworks and CMS</dt>
+        <dd>Django, Laravel, WordPress</dd>
+        <dt>Databases</dt>
+        <dd>MySQL, PostgreSQL</dd>
+        <dt>API</dt>
+        <dd>REST, Django Rest Framework, JSON</dd>
+        <dt>DevOps</dt>
+        <dd>AWS, Git, GitHub</dd>
+        <dt>Project Management</dt>
+        <dd>Agile, Scrum</dd>
+      </dl>
     </header>
   );
 }
@@ -21,11 +36,19 @@ function Header() {
 function Nav() {
   return (
     <nav>
-      <ul>
-        <Link to="/">About</Link>
-        <Link to="/work">Work</Link>
-        <Link to="/portfolio">Portfolio</Link>
-        <Link to="/contact">Contact</Link>
+      <ul class="nav flex-column">
+        <li class="nav-item">
+          <Link to="/">About</Link>
+        </li>
+        <li class="nav-item">
+          <Link to="/work">Work</Link>
+        </li>
+        <li class="nav-item">
+          <Link to="/portfolio">Portfolio</Link>
+        </li>
+        <li class="nav-item">
+          <Link to="/contact">Contact</Link>
+        </li>
       </ul>
     </nav>
   );
