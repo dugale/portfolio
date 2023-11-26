@@ -3,62 +3,65 @@ import './App.css';
 import About from "./About"
 import Contact from "./Contact"
 import Portfolio from "./Portfolio"
+import Skills from "./Skills"
 import Work from "./Work"
-import { Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route, NavLink } from 'react-router-dom';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 
 function Header() {
   return (
     <header>
-      <h1>David Ugale</h1>
-      <h2>Full Stack Developer</h2>
-      <dl>
-        <dt>Front-End</dt>
-        <dd>JavaScript, TypeScript, React, HTML, CSS, SCSS/SASS</dd>
-        <dt>Back-End</dt>
-        <dd>Python, PHP</dd>
-        <dt>Frameworks and CMS</dt>
-        <dd>Django, Laravel, WordPress</dd>
-        <dt>Databases</dt>
-        <dd>MySQL, PostgreSQL</dd>
-        <dt>API</dt>
-        <dd>REST, Django Rest Framework, JSON</dd>
-        <dt>DevOps</dt>
-        <dd>AWS, Git, GitHub</dd>
-        <dt>Project Management</dt>
-        <dd>Agile, Scrum</dd>
-      </dl>
+      <h1 class="display-2">David Ugale</h1>
+      <h3>Full Stack Developer</h3>
     </header>
   );
 }
 
 function Nav() {
   return (
-    <nav>
+    <nav class="mt-5">
       <ul class="nav flex-column">
-        <li class="nav-item">
-          <Link to="/">About</Link>
+        <li class="nav-item mb-2">
+            <MenuLink to="/" name="About" />
         </li>
-        <li class="nav-item">
-          <Link to="/work">Work</Link>
+        <li class="nav-item mb-2">
+            <MenuLink to="/skills" name="Skills" />
         </li>
-        <li class="nav-item">
-          <Link to="/portfolio">Portfolio</Link>
+        <li class="nav-item mb-2">
+            <MenuLink to="/work" name="Work Experience" />
         </li>
-        <li class="nav-item">
-          <Link to="/contact">Contact</Link>
+        <li class="nav-item mb-2">
+            <MenuLink to="/portfolio" name="Portfolio" />
+        </li>
+        <li class="nav-item mb-2">
+            <MenuLink to="/contact" name="Contact" />
         </li>
       </ul>
     </nav>
   );
 }
 
+function MenuLink(props) {
+    /*
+    <Link to={props.to} class="link-light link-offset-2 link-underline-opacity-0 link-underline-opacity-75-hover">{props.name}</Link>
+    */
+    let defaultClasses = "link-light link-offset-2 link-underline-opacity-0 link-underline-opacity-75-hover";
+    let active = "fw-bold " + defaultClasses;
+    return (
+        <NavLink to={props.to} className={({ isActive }) => 
+            isActive ? active : defaultClasses
+        }
+        >{props.name}</NavLink>
+    )
+}
+
 function Main() {
   return (
-    <main>
+    <main class="pt-4">
       <Routes>
         <Route path="/" element={<About />} />
+        <Route path="/skills" element={<Skills />} />
         <Route path="/work" element={<Work />} />
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/contact" element={<Contact />} />
@@ -77,13 +80,13 @@ function Footer() {
 
 function App() {
   return (
-    <div class="container">
+    <div class="container mt-5">
       <div class="row">
-        <div class="col">
+        <div class="col-md-5">
           <Header />
           <Nav />
         </div>
-        <div class="col">
+        <div class="col-md-7">
           <Main />
           <Footer />
         </div>
