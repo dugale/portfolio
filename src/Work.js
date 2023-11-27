@@ -1,12 +1,12 @@
 function Work() {
     return (
         <div class="row">
-            <div class="col-3">
-                2006 - Present
-            </div>
-            <div class="col-9">
-                Full Stack Developer - Daya Web, Inc.
-                <ul class="ps-3">
+            <div class="col">
+                <p>
+                    <span class="text-white fw-bold">Full Stack Developer - Daya Web, Inc.</span><br />
+                    2006 - Present
+                </p>
+                <ul class="mt-3 ps-3">
                     <li>Design and program diverse web solutions for client projects, utilizing Python, PHP, and MySQL to deliver creative and engaging websites</li>
                     <li>Build dynamic website applications and functionality using modern frameworks written in Django, Laravel, and React</li>
                     <li>Create and customize WordPress themes and plugins, as well as modify and improve existing ones to meet specific client requirements and enhance website functionality</li>

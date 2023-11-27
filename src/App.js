@@ -14,6 +14,7 @@ function Header() {
     <header>
       <h1 class="display-2">David Ugale</h1>
       <h3>Full Stack Developer</h3>
+      <p class="text-white-50">Long Beach, CA</p>
     </header>
   );
 }
@@ -46,11 +47,12 @@ function MenuLink(props) {
     /*
     <Link to={props.to} class="link-light link-offset-2 link-underline-opacity-0 link-underline-opacity-75-hover">{props.name}</Link>
     */
-    let defaultClasses = "link-light link-offset-2 link-underline-opacity-0 link-underline-opacity-75-hover";
-    let active = "fw-bold " + defaultClasses;
+    let defaultClasses = "link-light link-offset-2 link-underline-opacity-0";
+    let notActive = defaultClasses + " text-secondary-emphasis";
+    let active = defaultClasses + " fw-bold text-white";
     return (
         <NavLink to={props.to} className={({ isActive }) => 
-            isActive ? active : defaultClasses
+            isActive ? active : notActive
         }
         >{props.name}</NavLink>
     )
@@ -58,7 +60,7 @@ function MenuLink(props) {
 
 function Main() {
   return (
-    <main class="pt-4">
+    <main class="pt-4 text-secondary-emphasis">
       <Routes>
         <Route path="/" element={<About />} />
         <Route path="/skills" element={<Skills />} />

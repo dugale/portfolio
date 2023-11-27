@@ -2,7 +2,7 @@ function Skills() {
     return (
         <dl>
         <dt>Front-End</dt>
-        <dd>JavaScript, TypeScript, React, HTML, CSS, SCSS/SASS</dd>
+        <dd>JavaScript, TypeScript, React, HTML, CSS, SCSS/SASS <span class="badge rounded-pill text-bg-secondary fs-6">Light</span></dd>
         <dt>Back-End</dt>
         <dd>Python, PHP</dd>
         <dt>Frameworks and CMS</dt>
