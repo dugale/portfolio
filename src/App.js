@@ -32,12 +32,6 @@ function Nav() {
         <li class="nav-item mb-2">
             <MenuLink to="/work" name="Work Experience" />
         </li>
-        <li class="nav-item mb-2">
-            <MenuLink to="/portfolio" name="Portfolio" />
-        </li>
-        <li class="nav-item mb-2">
-            <MenuLink to="/contact" name="Contact" />
-        </li>
       </ul>
     </nav>
   );
@@ -65,8 +59,6 @@ function Main() {
         <Route path="/" element={<About />} />
         <Route path="/skills" element={<Skills />} />
         <Route path="/work" element={<Work />} />
-        <Route path="/portfolio" element={<Portfolio />} />
-        <Route path="/contact" element={<Contact />} />
       </Routes>
     </main>
   );
@@ -74,8 +66,8 @@ function Main() {
 
 function Footer() {
   return (
-    <footer>
-
+    <footer class="mt-5 py-5">
+        Built in <a class="link-underline link-underline-opacity-0" href="https://react.dev/" target="_blank" rel="noreferrer">React</a> and <a class="link-underline link-underline-opacity-0" href="https://getbootstrap.com/" target="_blank" rel="noreferrer">Bootstrap</a>.
     </footer>
   );
 }

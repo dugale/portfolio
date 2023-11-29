@@ -2,19 +2,19 @@ function Skills() {
     return (
         <dl>
         <dt>Front-End</dt>
-        <dd>JavaScript, TypeScript, React, HTML, CSS, SCSS/SASS <span class="badge rounded-pill text-bg-secondary fs-6">Light</span></dd>
+        <dd class="my-2"><span class="badge rounded-pill text-bg-secondary fs-6">JavaScript</span> <span class="badge rounded-pill text-bg-secondary fs-6">TypeScript</span> <span class="badge rounded-pill text-bg-secondary fs-6">React</span> <span class="badge rounded-pill text-bg-secondary fs-6">HTML</span> <span class="badge rounded-pill text-bg-secondary fs-6">CSS</span> <span class="badge rounded-pill text-bg-secondary fs-6">SCSS/SASS</span></dd>
         <dt>Back-End</dt>
-        <dd>Python, PHP</dd>
+        <dd class="my-2"><span class="badge rounded-pill text-bg-secondary fs-6">Python</span> <span class="badge rounded-pill text-bg-secondary fs-6">PHP</span></dd>
         <dt>Frameworks and CMS</dt>
-        <dd>Django, Laravel, WordPress</dd>
+        <dd class="my-2"><span class="badge rounded-pill text-bg-secondary fs-6">Django</span> <span class="badge rounded-pill text-bg-secondary fs-6">Laravel</span> <span class="badge rounded-pill text-bg-secondary fs-6">WordPress</span></dd>
         <dt>Databases</dt>
-        <dd>MySQL, PostgreSQL</dd>
+        <dd class="my-2"><span class="badge rounded-pill text-bg-secondary fs-6">MySQL</span> <span class="badge rounded-pill text-bg-secondary fs-6">PostgreSQL</span></dd>
         <dt>API</dt>
-        <dd>REST, Django Rest Framework, JSON</dd>
+        <dd class="my-2"><span class="badge rounded-pill text-bg-secondary fs-6">REST</span> <span class="badge rounded-pill text-bg-secondary fs-6">Django Rest Framework</span> <span class="badge rounded-pill text-bg-secondary fs-6">JSON</span></dd>
         <dt>DevOps</dt>
-        <dd>AWS, Git, GitHub</dd>
+        <dd class="my-2"><span class="badge rounded-pill text-bg-secondary fs-6">AWS</span> <span class="badge rounded-pill text-bg-secondary fs-6">Git</span> <span class="badge rounded-pill text-bg-secondary fs-6">GitHub</span></dd>
         <dt>Project Management</dt>
-        <dd>Agile, Scrum</dd>
+        <dd class="my-2"><span class="badge rounded-pill text-bg-secondary fs-6">Agile</span> <span class="badge rounded-pill text-bg-secondary fs-6">Scrum</span></dd>
       </dl>
     );
 }
